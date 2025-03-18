@@ -1,0 +1,230 @@
+/* Animate the logo with keyframes.  (Here is a keyframes reference.) It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded. **You can complete this step later in the process - it won’t affect the larger views.  */
+#logo {
+    animation-name: expand;
+    /* setting the name of the animation */
+    animation-duration:5s;
+    /* setting the length of the animation */
+    animation-iteration-count: 1;
+    /* making it so the animation plays once */
+  }
+  
+  @keyframes expand {
+
+    from {opacity: 0;}
+    /* starts at 0 opacity */
+    from {width: 25px;}
+    /* starts at a width of 25px */
+    to {width: 475px;}
+    /* ends with a width of 475px */
+    to {opacity: 1;}
+    /* ends with 1 opacity */
+  }
+
+/* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
+body{
+    font-family: "Poppins", "serif";
+    /* Poppin font with serif as backup */
+    background: #f1f1f1;
+    /* Background set to #f1f1f1 as a backup if image does not load */
+    background-image: url("../images/concrete_seamless.png");
+    /* background image set  */
+}
+
+/* Edit the css for the header tag (all instances) to use flex to match our example. */
+header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* makes it so it is aligled on an vertical axces */
+}
+/* Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex.  */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+    /* selects the class of nav_links and makes flex display and vertical derection */
+}
+
+/* Style the links so that they have the same color even after they have been visited. This is a “challenge” problem. You should not give or receive help when completing it. */
+.nav_item a:visited{
+    color: #0000EE;
+    /* makes links the same color after they are visisted as they are before */
+}
+
+
+/* Identify the proper selector to style ONLY those header elements that are direct children of a card class.  The required styling is the following: 
+background: #288088,
+solid 2px border using #45ADAD,
+20px of padding on the top and the bottom, 
+50px border-radius on the top left and right corners.  */
+.card>header{
+    /*  selects direct children of .card that are headers */
+    background: #288088;
+    /* seting background color */
+    border: solid 2px #288088;
+    /* setting border */
+    padding: 20px 0px;
+    /* setting padding on top and bottom but none on the sides */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* only the top border is rounded */
+}
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* makes it so the background that is white does not stick out from the teal rounded borders of the header */
+}
+
+
+/* Steps 7 and 8 go together.  You won’t have the right “look” until you finish both. */
+
+/* Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements.  You can see that in the mobile view they all have the same width.  */
+/* Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically. */
+
+.pricing{
+    display: flex;
+    /* making it a flex display */
+    flex-wrap: wrap;
+    /* allowing the items to go to differnt lines */
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    /* centering the items in both directions */
+}
+
+.card{
+    flex-basis: 450px;
+     /*setting the initial size of the .card class items  */
+}
+
+
+
+/* Style the images in the gallery class. These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px.   */
+.gallery img{
+    /* getting the images that are children of the gallery class */
+    border:solid 10px #50C7C7;
+    /* making the border */
+    margin: 10px;
+    /* making the margin of 10px on all sides */
+    width: 300px;
+    /* setting width to 300px for the images */
+}
+
+/* Edit the css for the gallery class to use flex to match our example. (You may want to look at the screen shots from 1200px and 1500px as well -  the changes are not from media queries, but from the use of flex.) */
+.gallery{
+    display: flex;
+    /* making it a flex display */
+    flex-wrap: wrap;
+    /* allowing the items to go to differnt lines */
+    align-items: stretch;
+    /* makes all images the same height */
+    align-content: center;
+    justify-content: center;
+    /* centering the items in both directions */
+}
+
+/* The following specifications are for when the screen-size is greater than 900px
+Observe the screenshot from 1200px */
+@media only screen and (min-width: 900px){
+/* finding when screens are bigger than 900px */
+/* Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. The logo should be as far to the left as possible and the links as far to the right as possible. Use flex properties, NOT position properties. */
+header{
+    display:flex;
+    flex-direction: row;
+    /* makes it so it is aligned in a row not a collum */
+    justify-content: space-between;
+    /* makes it so it has the most space between the logo and the nav and they are on the sides */
+}
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    /* selects the class of nav_links and makes flex display and horizontaly derection */
+}
+/* Edit the css for the pricing and card classes to match our example. Part of achieving this is by using a flex-property to specify a “size” of 275px. Notice that the elements do not have the same height, but do have the same width. */
+.pricing{
+
+    flex-wrap: nowrap;
+/* makes it so the pricing cards dont go to differnt lines */
+}
+
+.card{
+    flex-basis: 275px;
+     /*setting the initial size of the .card class items  */
+}
+
+/* Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. You can see an example of this in the video and in the screenshot at 1200px when scrolled. This is a challenge problem. You should not give or receive help when completing it.*/
+
+body>header{
+    /* selects just the first header the one with the nav */
+    position: sticky;
+    top: 0;
+    /* makes the header sticky  */
+}
+}
+
+/*The following specifications are for when the user prefers reduced motion. */
+@media (prefers-reduced-motion) {
+/* finds out if the user has reduced motion on */
+#logo {
+    animation-name:none;
+    /* makes animation not play when reduced motion is on*/
+}
+/*The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences.  */
+}
+/* The following specifications are for when the page is printed in portrait mode.  		
+View the print view from Firefox on regular sized paper in portrait mode (portrait mode is the default mode). */
+ @media only print{ 
+
+/* Change the font on your body to Arial with a backup value of  Helvetica */
+/* The background image should be removed.  */
+body{
+    font-family: Arial, Helvetica;
+    /* changes fonts */
+    background-image: none;
+    /* removes background image */
+}
+
+/* Edit the nav/nav_links elements so that they are spaced according to the image above. */
+body>header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* makes it so the logo and nav are in differnt rows */
+} 
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    /* selects the class of nav_links and makes flex display and horizontaly derection */
+}
+
+
+/* Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height. */
+.pricing{
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    /* makes it aligled at the bottom evenly and all in one line  */
+}
+
+
+/* The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px.  */
+.card{
+    border: solid  2px #45ADDD;
+    flex-basis: 325px ;
+    /* adding border and the size of them */
+}
+
+
+/* No part of the gallery should be visible. */
+.gallery,#gallery{
+    display: none;
+    /* makes the gallery not show up in print view */
+}
+
+
+/* Without using list-style-type add the thumbs up entity as shown in the cards. This is a challenge problem. You should not give or receive help when completing it.**For some people the thumbs up is not printing as yellow. That is fine */
+div ul li:nth-child(2)::after{
+    /* selecting only the ul that is a child of a div and the secound li child of the ul to make it have the thumbs up */
+    content: "\01f44d" ;
+    /* insearts the thumbs up with content */
+}
+}  
